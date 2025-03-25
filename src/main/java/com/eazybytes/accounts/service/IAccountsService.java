@@ -1,9 +1,11 @@
 package com.eazybytes.accounts.service;
 
-import com.eazybytes.accounts.dto.CustomerDTO;
+import com.eazybytes.accounts.dto.CustomerDto;
 
 public interface IAccountsService {
 
-    void createAccount(CustomerDTO customerDto);
+    void createAccount(CustomerDto customerDto);
+
+    CustomerDto fetchAccount(String mobileNumber);
 
 }
