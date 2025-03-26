@@ -1,11 +1,15 @@
 package com.eazybytes.accounts.service;
 
-import com.eazybytes.accounts.dto.CustomerDto;
+import com.eazybytes.accounts.dto.CustomerDTO;
 
 public interface IAccountsService {
 
-    void createAccount(CustomerDto customerDto);
+    void createAccount(CustomerDTO customerDto);
 
-    CustomerDto fetchAccount(String mobileNumber);
+    CustomerDTO fetchAccount(String mobileNumber);
+
+    boolean updateAccount(CustomerDTO customerDto);
+
+    boolean deleteAccount(String mobileNumber);
 
 }
