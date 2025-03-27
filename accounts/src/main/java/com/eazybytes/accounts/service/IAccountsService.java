@@ -1,15 +1,35 @@
 package com.eazybytes.accounts.service;
 
-import com.eazybytes.accounts.dto.CustomerDTO;
+import com.eazybytes.accounts.dto.CustomerDto;
 
 public interface IAccountsService {
 
-    void createAccount(CustomerDTO customerDto);
+    /**
+     *
+     * @param customerDto - CustomerDto Object
+     */
+    void createAccount(CustomerDto customerDto);
 
-    CustomerDTO fetchAccount(String mobileNumber);
+    /**
+     *
+     * @param mobileNumber - Input Mobile Number
+     * @return Accounts Details based on a given mobileNumber
+     */
+    CustomerDto fetchAccount(String mobileNumber);
 
-    boolean updateAccount(CustomerDTO customerDto);
+    /**
+     *
+     * @param customerDto - CustomerDto Object
+     * @return boolean indicating if the update of Account details is successful or not
+     */
+    boolean updateAccount(CustomerDto customerDto);
 
+    /**
+     *
+     * @param mobileNumber - Input Mobile Number
+     * @return boolean indicating if the delete of Account details is successful or not
+     */
     boolean deleteAccount(String mobileNumber);
+
 
 }
