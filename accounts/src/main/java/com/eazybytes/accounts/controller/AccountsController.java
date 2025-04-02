@@ -1,10 +1,10 @@
 package com.eazybytes.accounts.controller;
 
 import com.eazybytes.accounts.constants.AccountsConstants;
+import com.eazybytes.accounts.dto.AccountsContactInfoDto;
 import com.eazybytes.accounts.dto.CustomerDto;
 import com.eazybytes.accounts.dto.ErrorResponseDto;
 import com.eazybytes.accounts.dto.ResponseDto;
-import com.eazybytes.accounts.dto.AccountsContactInfoDto;
 import com.eazybytes.accounts.service.IAccountsService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -178,7 +178,7 @@ public class AccountsController {
     }
 
     @Operation(
-            summary = "Get build information",
+            summary = "Get Build information",
             description = "Get Build information that is deployed into accounts microservice"
     )
     @ApiResponses({
@@ -198,8 +198,8 @@ public class AccountsController {
     @GetMapping("/build-info")
     public ResponseEntity<String> getBuildInfo() {
         return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(buildVersion);
+                    .status(HttpStatus.OK)
+                    .body(buildVersion);
     }
 
     @Operation(
@@ -224,7 +224,7 @@ public class AccountsController {
     public ResponseEntity<String> getJavaVersion() {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(environment.getProperty("java.home"));
+                .body(environment.getProperty("JAVA_HOME"));
     }
 
     @Operation(
@@ -251,4 +251,6 @@ public class AccountsController {
                 .status(HttpStatus.OK)
                 .body(accountsContactInfoDto);
     }
+
+
 }
