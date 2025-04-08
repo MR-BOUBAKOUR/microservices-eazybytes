@@ -11,4 +11,5 @@ public class CardsFallback implements CardsFeignClient{
     public ResponseEntity<CardsDto> fetchCardDetails(String correlationId, String mobileNumber) {
         return null;
     }
+
 }
